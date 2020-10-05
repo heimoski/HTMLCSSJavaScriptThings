@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CrossKnowledge - Code challenge</title>
+</head>
+<body>
+  <script>
+    // This will create elements for testing, don't change this code
+    (() => {
+      const MS_PER_MINUTE = 60000
+      const NOW = new Date()
+      let minutes = [0, 1, 30, 60, 6 * 60, 23 * 60, 24 * 60]
+      let dates = []
+
+      minutes.forEach((i) => dates.push(new Date(NOW - i * MS_PER_MINUTE)))
+
+      dates.forEach((item) => {
+        let el = document.createElement("div")
+        el.innerHTML = "Started "
+
+        let dt = document.createElement('span')
+        dt.className = 'js-date-format'
+        dt.innerHTML = item.toISOString()
+        el.appendChild(dt)
+        document.body.appendChild(el)
+      })
+    })();
+  </script>
+  <script>
+    var domDates = document.getElementsByClassName('js-date-format');
+    var dates =[]
+    for(i=0;i<6;i++){
+      const d = new Date(domDates[i].innerHTML);
+        dates[i] = d;
+    }
+    var updateLoop = setInterval(UpdateTimers,1000);
+    UpdateTimers();
+
+    function UpdateTimers(){
+      for(i=0;i<6;i++){
+          document.getElementsByClassName('js-date-format')[i].innerHTML = CalculateTimePassed(dates[i]);
+      }
+    }
+
+    function CalculateTimePassed(initialTime){
+      let d =  new Date(initialTime);
+      let now = Date.now();
+      let difference = Math.floor( (now - d)/1000);
+      let caseType = GetCaseType(difference);
+      switch (caseType){
+        case 'seconds': 
+        return difference + ' seconds ago';
+          break;
+        case 'minutes': 
+          return Math.floor(difference/60)  + ' minutes ago';
+          break;
+        case 'hours':
+          return Math.floor(difference/3600)  + ' hours ago';
+          break;
+      }
+    }
+
+    function GetCaseType(difference){
+      if(difference < 60){
+        return 'seconds';
+      }
+      if(difference >= 60 && difference < 3600){
+        return 'minutes';
+      }
+      if(difference >= 3600){
+        return 'hours';
+      }
+    }
+  </script>
+</body>
+</html>

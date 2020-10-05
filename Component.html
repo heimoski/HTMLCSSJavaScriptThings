@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CrossKnowledge - Code challenge</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet"> 
+</head>
+<body>
+  <article class="block">
+    <header>
+      <div>
+        <div class="movieTitle">
+          Avengers: Infinity War
+        </div>
+        <div class="lenght">
+          156 minutes
+        </div>
+      </div>
+      <div class="score">
+        85% <img class="seal" src="https://www.rottentomatoes.com/assets/pizza-pie/images/icons/global/cf-lg.3c29eff04f2.png" alt="">
+      </div>
+    </header>
+
+    <div class="poster">
+      <img class="poster-image" src="https://i.ibb.co/9tLcR7s/avengers.jpg">
+      <a class="buttonReview" href="https://www.rottentomatoes.com/m/avengers_infinity_war" target="_blank">
+        Check review
+      </a>
+    </div>
+
+    <footer>
+      <p class="movieDescription">
+        An unprecedented cinematic journey ten years in the making and spanning the entire Marvel Cinematic Universe, Marvel Studios' "Avengers: Infinity War" brings to the screen the ultimate, deadliest showdown of all time. The Avengers and their Super Hero allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe. 
+      </p>
+    </footer>
+  </article>
+</body>
+</html>
+<style>
+    .block {
+        background-color: #f4f4f4;
+        width: 325px;
+    }
+
+    .movieTitle {
+        font: bold 13px/30px Roboto, sans-serif;
+    }
+
+    .lenght {
+        position: relative;
+        top: 5px;
+    }
+
+    .score {
+        text-align: left;
+        margin: 0px 0px 0px 265px;
+        display: inline-block;
+        position: relative;
+        top: -30px;
+    }
+
+    .seal {
+        height: 35%;
+        width: 35%;
+        position: relative;
+        top: 5px;
+    }
+
+    .poster {
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,1)), url("https://i.ibb.co/9tLcR7s/avengers.jpg");
+        position: relative;
+        top: -10px;
+    }
+
+    .poster-image {
+        visibility: hidden;
+    }
+
+    .buttonReview {
+        color: black;
+        background: #a5a5a4;
+        padding: 13px 60px;
+        border-radius: 50px;
+        border: solid white;
+        text-decoration: none;
+        position: relative;
+        left: 55px;
+        top: -55px;
+        opacity: 0.8;
+        filter: contrast(100%);
+    }
+
+    .movieDescription {
+        font-size: 17px;
+        font-family: Arial;
+    }
+</style>
